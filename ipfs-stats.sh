@@ -14,6 +14,7 @@ BOOTSTRAP_LIST="
 QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu
+QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd
 "
 
 send_metric(){
@@ -56,7 +57,7 @@ ping_node(){
   local nodeid=$1
 
   sleep $(( ( RANDOM % 15 )  + 1 ))
-  local avg=$(ipfs ping -n=5 $nodeid | grep Average | cut -d: -f2 | sed s/ms//) || 0
+  local avg=$(ipfs ping -n=10 $nodeid | grep Average | cut -d: -f2 | sed s/ms//) || 0
 
   send_metric "ipfs.global.bootstrap_node_latency.$nodeid $avg $(date +%s)"
 }
