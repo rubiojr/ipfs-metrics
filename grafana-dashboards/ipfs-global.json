@@ -12,7 +12,7 @@
     {
       "collapse": false,
       "editable": true,
-      "height": "250px",
+      "height": "200px",
       "panels": [
         {
           "aliasColors": {},
@@ -94,7 +94,7 @@
           "editable": true,
           "error": false,
           "format": "none",
-          "height": "278px",
+          "height": "228px",
           "id": 4,
           "interval": null,
           "links": [],
@@ -139,7 +139,7 @@
     {
       "collapse": false,
       "editable": true,
-      "height": "250px",
+      "height": "200px",
       "panels": [
         {
           "aliasColors": {
@@ -223,7 +223,7 @@
           "editable": true,
           "error": false,
           "format": "none",
-          "height": "278px",
+          "height": "228px",
           "id": 3,
           "interval": null,
           "links": [],
@@ -268,7 +268,7 @@
     {
       "collapse": false,
       "editable": true,
-      "height": "250px",
+      "height": "200px",
       "panels": [
         {
           "aliasColors": {
@@ -339,6 +339,81 @@
         }
       ],
       "title": "New row"
+    },
+    {
+      "title": "New row",
+      "height": "200px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "aliasColors": {
+            "ipfs.global.gateway_get_elapsed.mean": "#70DBED"
+          },
+          "bars": false,
+          "datasource": "influxdb",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "query": "select mean(value) from /ipfs.global.bootstrap_node_latency.Qm/ where $timeFilter group by time($interval) order asc",
+              "series": "/ipfs.global.bootstrap_node_latency.Qm/"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Bootstrap Node Ping",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ]
     }
   ],
   "nav": [
@@ -386,5 +461,5 @@
   },
   "refresh": "30s",
   "schemaVersion": 6,
-  "version": 24
+  "version": 27
 }
