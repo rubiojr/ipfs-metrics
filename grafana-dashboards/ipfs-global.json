@@ -77,7 +77,7 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "short",
+            "s",
             "short"
           ]
         },
@@ -93,7 +93,7 @@
           "datasource": "influxdb",
           "editable": true,
           "error": false,
-          "format": "none",
+          "format": "s",
           "height": "228px",
           "id": 4,
           "interval": null,
@@ -307,7 +307,7 @@
           "links": [],
           "nullPointMode": "connected",
           "percentage": false,
-          "pointradius": 1,
+          "pointradius": 2,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -333,7 +333,7 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "short",
+            "s",
             "short"
           ]
         }
@@ -383,7 +383,7 @@
           "links": [],
           "nullPointMode": "connected",
           "percentage": false,
-          "pointradius": 1,
+          "pointradius": 2,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -409,7 +409,7 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "short",
+            "ms",
             "short"
           ]
         }
@@ -450,7 +450,7 @@
     }
   ],
   "time": {
-    "from": "now-15m",
+    "from": "now-1h",
     "to": "now"
   },
   "templating": {
@@ -461,5 +461,5 @@
   },
   "refresh": "30s",
   "schemaVersion": 6,
-  "version": 27
+  "version": 33
 }
